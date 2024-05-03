@@ -42,4 +42,23 @@ function casuale() {
 }
 
 // - salvare i dati in una variabile.
-let numCasuali = casuale() 
+let numCasuali = casuale()
+
+// tempo per ogni ripetizione
+let treSec = 3 * 1000
+
+let seconds = 3
+
+// setInterval(nomeFunzione, tempoPerOgniRipetizione);
+let hideNum = setInterval(function () {
+    if (seconds != 0) {
+        console.log(seconds)
+        document.getElementById("seconds").innerText = seconds
+        seconds--
+    } else {
+        document.getElementById("casuale").innerText = ""
+        clearInterval(hideNum)
+    }
+
+}, treSec);
+console.log(hideNum)
